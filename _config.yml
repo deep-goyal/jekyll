@@ -1,8 +1,8 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: CSE355
+description: Deep's Collection of Resources for CSE355.
 theme: just-the-docs
 
 url: https://just-the-docs.github.io
-
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+back_to_top: true
+back_to_top_text: "Back to top"
