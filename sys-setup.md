@@ -5,78 +5,154 @@ layout: home
 
 # **System Setup**
 {: .no_toc}
+---
 
-The first half of CSE355 covers Finite Automatas and Pushdown Automatas.
-[Saajan Maslanka](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.linkedin.com/in/saajanm&ved=2ahUKEwjYhNf38KuPAxVXJkQIHUv3PDwQFnoECBsQAQ&usg=AOvVaw331PylTzK2S4H8hCbhGZIJ) along with the CSE355 instructional team have developed [cse355-machine-design](https://pypi.org/project/cse355-machine-design/), a python package to help you input your FAs and PDAs and test it
-against a variety of strings instantly.
+
+
+Welcome to CSE355\! The first half of this course covers Finite and Pushdown Automata. To help you design and test your machines, the instructional team has developed `cse355-machine-design`, a Python package that lets you instantly test your designs against various input strings.
+
+To ensure a clean and conflict-free setup, we'll use a **virtual environment** (`venv`). This is a standard practice that creates an isolated space for this course's packages, so they don't interfere with other Python projects on your machine.
 
 - TOC
 {:toc}
 
-## Macintosh
+### **Step 0: Check Your Python Version (All Platforms)**
 
-The Macintosh OS ships with python pre-installed. You can follow these steps to initialize a virtual environment and install the package into the environment.
+Before you begin, open your terminal (Terminal on Mac/Linux, PowerShell or CMD on Windows) and check your Python version. We require **Python 3.10 or newer**.
 
-- Create a virtual environment by running:
+```bash
+# On macOS and Linux
+python3 --version
 
-  ```bash
-  python3 -m venv venv
-  ```
+# On Windows
+py --version
+```
 
-- Use this virtual environment with:
+If you don't have Python or have an older version, please install the latest stable version from [python.org](https://www.python.org/downloads/).
 
-  ```bash
-  source ./venv/bin/activate
-  ```
+### **Step 1: Create Your Project Directory**
 
-- Load the package into the environment by downloading it from pip with:
+Before creating the environment, create a dedicated folder for your coursework and navigate into it.
 
-  ```bash
-  pip install cse355-machine-design
-  ```
+```bash
+mkdir cse355-projects
+cd cse355-projects
+```
 
-## Linux
+-----
 
-This section assumes you are using `apt` package manager in your distro.
+## **Macintosh**
 
-- Download python:
+Modern macOS versions come with Python 3. If the `python3 --version` command failed, you may need to install the [Xcode Command Line Tools](https://developer.apple.com/xcode/resources/) by running `xcode-select --install`.
 
-  ```bash
-  apt-get install python
-  ```
+1.  **Create the virtual environment** in your project folder:
 
+    ```bash
+    python3 -m venv venv
+    ```
 
-- Create a virtual environment by running:
+2.  **Activate the environment.** This command tells your terminal to use the Python and tools inside the `venv` folder.
 
-  ```bash
-  python3 -m venv venv
-  ```
+    ```bash
+    source venv/bin/activate
+    ```
 
-- Use this virtual environment with:
+    You'll know it worked when you see `(venv)` at the beginning of your terminal prompt.
 
-  ```bash
-  source ./venv/bin/activate
-  ```
+3.  **Upgrade `pip` and install the package:**
 
-- Load the package into the environment by downloading it from pip with:
+    ```bash
+    pip install --upgrade pip
+    pip install cse355-machine-design
+    ```
 
-  ```bash
-  pip install cse355-machine-design
-  ```
+4.  **When you're done,** exit the environment with:
 
-## Windows
+    ```bash
+    deactivate
+    ```
 
-- Download [Python Installer](https://www.python.org/downloads/windows/) for Windows
+-----
 
-- After configuring python for your machine, initialize a virtual environment by running:
+## **Linux** 
 
-  ```bash
-  python3 -m venv venv
-  ```
+This section assumes you are using a Debian-based distro (like Ubuntu) with the `apt` package manager. For other distros, use your native package manager (e.g., `dnf` for Fedora, `pacman` for Arch).
 
-- Load the virtual environment and install the package by running these commands in powershell:
+1.  **Install python, pip, and venv.** These are often in separate packages.
 
-  ```sh
-  .\venv\Scripts\Activate.ps1
-  pip install cse355-machine-design
-  ```
+    ```bash
+    sudo apt update
+    sudo apt install python3 python3-pip python3-venv
+    ```
+
+2.  **Create the virtual environment** in your project folder:
+
+    ```bash
+    python3 -m venv venv
+    ```
+
+3.  **Activate the environment:**
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+    Your terminal prompt should now start with `(venv)`.
+
+4.  **Upgrade `pip` and install the package:**
+
+    ```bash
+    pip install --upgrade pip
+    pip install cse355-machine-design
+    ```
+
+5.  **To exit the environment,** simply run:
+
+    ```bash
+    deactivate
+    ```
+
+-----
+
+## **Windows** 
+
+1.  **Download and install Python** from the [official website](https://www.python.org/downloads/windows/).
+
+      - **CRITICAL:** On the first screen of the installer, you **must** check the box that says **"Add Python to PATH"**. This will save you a lot of trouble.
+
+2.  **Create the virtual environment** in your project folder:
+
+    ```bash
+    py -3 -m venv venv
+    ```
+
+3.  **Activate the environment.** The command is different depending on whether you are using Command Prompt or PowerShell.
+
+      - **For PowerShell:**
+
+        ```powershell
+        .\venv\Scripts\Activate.ps1
+        ```
+
+        *(If you get an error about execution policies, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` and try again.)*
+
+      - **For Command Prompt (CMD):**
+
+        ```cmd
+        venv\Scripts\activate
+        ```
+
+    You will see `(venv)` at the start of your prompt once it's active.
+
+4.  **Upgrade `pip` and install the package:**
+
+    ```bash
+    pip install --upgrade pip
+    pip install cse355-machine-design
+    ```
+
+5.  **When you're finished,** use this command to leave the environment:
+
+    ```bash
+    deactivate
+    ```
