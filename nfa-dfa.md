@@ -10,6 +10,6 @@ This document demonstrates the steps to convert an NFA to a DFA. I am using a sl
 
 <a href="{{ site.baseurl }}/assets/nfa-dfa.pdf">Download the PDF</a>.
 
-<object data=".{{ site.baseurl }}/assets/nfa-dfa.pdf" type="application/pdf" width="100%" height="1024px">
+<object data="{{ site.baseurl }}/assets/nfa-dfa.pdf" type="application/pdf" width="100%" height="1024px">
     <p>Your browser does not support PDFs. <a href="{{ site.baseurl }}/assets/nfa-dfa.pdf">Download the PDF</a>.</p>
 </object>

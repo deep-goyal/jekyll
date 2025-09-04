@@ -2,6 +2,7 @@ title: CS Resources
 description: Deep's Collection of Resources for CSE355.
 theme: just-the-docs
 color_scheme: dark
-url: https://deep-goyal.github.io/jekyll/
+url: https://deep-goyal.github.io
+baseurl: /jekyll
 back_to_top: true
 back_to_top_text: "Back to top"
